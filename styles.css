@@ -20,25 +20,25 @@ body {
 
 /* Todo list styles */
 #todo-list {
-    list-style-type: none;
-    padding: 0;
+    list-style-type: none;  /* Removes default bullet points */
+    padding: 0;  /* Resets padding */
 }
 
 /* Individual todo item styles */
 #todo-list li {
     display: flex;
     justify-content: space-between;
-    margin: 10px 0;
+    margin: 10px 0;  /* Adds space between items */
 }
 
 /* Completed todo item styles */
 #todo-list li.completed {
     text-decoration: line-through;
-    color: grey;
+    color: grey;  /* Applies grey color to completed items */
 }
 
 /* Button styles */
 button {
     margin-left: 5px;
-    cursor: pointer;
+    cursor: pointer;  /* Changes cursor to pointer on hover */
 }
