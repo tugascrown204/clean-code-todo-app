@@ -1,8 +1,10 @@
+// Get DOM elements for todo functionality
 const todoInput = document.getElementById('todo-input');
 const addTodoBtn = document.getElementById('add-todo-btn');
 const todoList = document.getElementById('todo-list');
 const filterButtons = document.querySelectorAll('button[id^="filter-"]');
 
+// Load todos from local storage or initialize an empty array
 let todos = JSON.parse(localStorage.getItem('todos')) || [];
 
 // Renders the list of todos based on the selected filter
@@ -16,7 +18,7 @@ function renderTodos(filter = 'all') {
         if (todo.completed) li.classList.add('completed'); // Mark completed todos
         li.addEventListener('click', () => toggleTodoCompletion(index)); // Toggle completion on click
         const deleteBtn = document.createElement('button');
-        deleteBtn.textContent = 'Delete';
+        deleteBtn.textContent = 'Delete'; // Set delete button text
         // Add event listener for delete button
         deleteBtn.addEventListener('click', (e) => {
             e.stopPropagation(); // Prevent triggering the li click event
@@ -29,7 +31,7 @@ function renderTodos(filter = 'all') {
 
 // Adds a new todo to the list
 function addTodo() {
-    const todoText = todoInput.value.trim();
+    const todoText = todoInput.value.trim(); // Get trimmed todo input text
     if (todoText) {
         todos.push({ text: todoText, completed: false }); // Add new todo
         localStorage.setItem('todos', JSON.stringify(todos)); // Save to local storage
